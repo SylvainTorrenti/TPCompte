@@ -16,6 +16,10 @@ namespace TPCompte
         private Customer? _owner;
         #endregion
         #region Constructor
+        /// <summary>
+        /// Constructor with Owner
+        /// </summary>
+        /// <param name="owner"></param>
         public Account(Customer owner)
         {
             _NB++;
@@ -23,15 +27,27 @@ namespace TPCompte
         }
         #endregion
         #region Get & Set Balance
+        /// <summary>
+        /// Balance
+        /// </summary>
         public int Balance { get => _balance; set => _balance = value; }
         #endregion
         #region Get & Set Owner
+        /// <summary>
+        /// Owner
+        /// </summary>
         internal Customer Owner { get => _owner; set => _owner = value; }
         #endregion
         #region Get & Set AccountNb
-        public int AccountNb { get => _accountNb; set => _accountNb = value; } 
+        /// <summary>
+        /// AccountNB
+        /// </summary>
+        public int AccountNb { get => _accountNb; set => _accountNb = value; }
         #endregion
         #region Method
+        /// <summary>
+        /// Display Account
+        /// </summary>
         public void DisplayAccount()
         {
             Console.WriteLine($"Numéro de Compte : {AccountNb}");
@@ -43,27 +59,53 @@ namespace TPCompte
             Console.WriteLine($"Tél : {Owner.Phone}");
             Console.WriteLine();
         }
+        /// <summary>
+        /// Credit with amount
+        /// </summary>
+        /// <param name="somme"></param>
+        /// <returns></returns>
         public int Credit(int somme)
         {
             return Balance = Balance + somme;
         }
+        /// <summary>
+        /// Credit with amount from an account
+        /// </summary>
+        /// <param name="somme"></param>
+        /// <param name="account"></param>
+        /// <returns></returns>
         public int CreditAccount(int somme, Account account)
         {
             account.Balance = account.Balance - somme;
             return Balance = Balance + somme;
         }
+        /// <summary>
+        /// Withdraw with amount
+        /// </summary>
+        /// <param name="somme"></param>
+        /// <returns></returns>
         public int Withdraw(int somme)
         {
             return Balance = Balance - somme;
         }
+        /// <summary>
+        /// Withdraw with amount to an account
+        /// </summary>
+        /// <param name="somme"></param>
+        /// <param name="account"></param>
+        /// <returns></returns>
         public int WithdrawAccount(int somme, Account account)
         {
             account.Balance = Balance + somme;
             return Balance = Balance - somme;
         }
-        public int DisplayAccountNB()
+        /// <summary>
+        /// Display number of account
+        /// </summary>
+        /// <returns></returns>
+        public static int DisplayAccountNB()
         {
-            return _NB;
+            return _NB - 1;
         }
         #endregion
     }

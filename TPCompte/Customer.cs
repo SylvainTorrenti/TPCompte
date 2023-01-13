@@ -15,6 +15,13 @@ namespace TPCompte
         private string _phone;
         #endregion
         #region Constructor
+        /// <summary>
+        /// Constructor customer with all attribute
+        /// </summary>
+        /// <param name="cIN"></param>
+        /// <param name="firstname"></param>
+        /// <param name="lastname"></param>
+        /// <param name="phone"></param>
         public Customer(string cIN, string firstname, string lastname, string phone)
         {
             _CIN = cIN;
@@ -22,6 +29,12 @@ namespace TPCompte
             _lastName = lastname;
             _phone = phone;
         }
+        /// <summary>
+        /// Constructor customer with CIN, Firstname and Lastname
+        /// </summary>
+        /// <param name="cIN"></param>
+        /// <param name="firstname"></param>
+        /// <param name="lastname"></param>
         public Customer(string cIN, string firstname, string lastname)
         {
             CIN = cIN;
@@ -30,18 +43,33 @@ namespace TPCompte
         }
         #endregion
         #region Get & Set CIN
+        /// <summary>
+        /// CIN
+        /// </summary>
         public string CIN { get => _CIN; set => _CIN = value; }
         #endregion
         #region Get & Set FirstName
+        /// <summary>
+        /// First Name
+        /// </summary>
         public string Firstname { get => _firstName; set => _firstName = value; }
         #endregion
         #region Get & Set LastName
+        /// <summary>
+        /// Last Name
+        /// </summary>
         public string Lastname { get => _lastName; set => _lastName = value; }
         #endregion
         #region Get & Set Phone
+        /// <summary>
+        /// Phone
+        /// </summary>
         public string Phone { get => _phone; set => _phone = value; }
         #endregion
         #region Method
+        /// <summary>
+        /// Display Customer
+        /// </summary>
         public void DisplayCustomer()
         {
             Console.WriteLine($"CIN : {CIN}");

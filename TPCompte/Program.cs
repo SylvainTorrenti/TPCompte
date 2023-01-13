@@ -14,7 +14,7 @@ Account2.DisplayAccount();
 #endregion
 #region Credit account
 Account1.Credit(25000);
-Account2.CreditAccount(20000, Account1); 
+Account2.CreditAccount(20000, Account1);
 #endregion
 Console.WriteLine("****************************");
 #region Show after credit
@@ -23,10 +23,11 @@ Account2.DisplayAccount();
 #endregion
 #region Witrhdraw account
 Account1.Withdraw(1500);
-Account2.WithdrawAccount(2000, Account1); 
+Account2.WithdrawAccount(2000, Account1);
 #endregion
 Console.WriteLine("****************************");
 #region Show after Withdraw
 Account1.DisplayAccount();
-Account2.DisplayAccount(); 
+Account2.DisplayAccount();
 #endregion
+Console.WriteLine($"Il y a eu {Account.DisplayAccountNB()} compte créé");
